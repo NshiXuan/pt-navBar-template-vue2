@@ -10,18 +10,14 @@
 
 <script >
 export default {
+  props: {
+    navBarData: {
+      type: Array,
+      default: () => []
+    }
+  },
   data() {
     return {
-      navBarData: [
-        {
-          name: '知识点树',
-          path: '/teacher/knowledge/tree'
-        },
-        {
-          name: '知识点联系',
-          path: '/teacher/knowledge/contact'
-        },
-      ],
       currentIndex: 0
     }
   },

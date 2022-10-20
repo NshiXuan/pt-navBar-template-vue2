@@ -1,34 +1,35 @@
 <template>
-  <div class="knowledge">
+  <div class="home">
     <TopBar :nav-bar-data="navBarData" />
     <router-view></router-view>
   </div>
 </template>
 
-<script >
+<script>
+import { test } from '../../../services';
 import TopBar from '../../../components/teacher/knowledge/top-bar.vue';
 
 export default {
+  name: "Home",
   data() {
     return {
       navBarData: [
         {
-          name: '知识点树',
-          path: '/teacher/knowledge/tree'
+          name: 'test1',
+          path: '/home/test1'
         },
         {
-          name: '知识点联系',
-          path: '/teacher/knowledge/contact'
+          name: 'test2',
+          path: '/home/test2'
         },
       ]
     };
   },
-  methods: {
+  mounted() {
+    test().then(res => {
+      console.log(res);
+    });
   },
   components: { TopBar }
-};
+}
 </script>
-
-<style lang="less" scoped>
-
-</style>

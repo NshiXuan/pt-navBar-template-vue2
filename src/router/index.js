@@ -11,7 +11,12 @@ const routes = [
   {
     path: '/home',
     name: 'Home',
-    component: () => import('../views/common/Home.vue')
+    component: () => import('../views/common/home/Home.vue'),
+    children: [
+      { path: '', redirect: '/home/test1' },
+      { path: 'test1', component: () => import('../views/common/home/children/test1.vue') },
+      { path: 'test2', component: () => import('../views/common/home/children/test2.vue') },
+    ]
   },
   {
     path: '/teacher/knowledge',
