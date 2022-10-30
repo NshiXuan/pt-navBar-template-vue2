@@ -31,7 +31,23 @@ const routes = [
   {
     path: '/teacher/topic',
     name: 'tTopic',
-    component: () => import('../views/teacher/tTopic/tTopic.vue')
+    component: () => import('../views/teacher/tTopic/tTopic.vue'),
+    children: [
+      {
+        path: 'add',
+        component: () => import('../views/teacher/tTopic/children/tAddTopic.vue'),
+        meta: {
+          isChildren: true,
+        }
+      },
+      {
+        path: 'edit',
+        component: () => import('../views/teacher/tTopic/children/tEditTopic.vue'),
+        meta: {
+          isChildren: true,
+        }
+      },
+    ]
   },
 
   {

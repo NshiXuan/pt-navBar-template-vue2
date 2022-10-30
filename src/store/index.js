@@ -46,7 +46,17 @@ export default new Vuex.Store({
       },
       {
         name: '题目管理',
-        path: '/teacher/topic'
+        path: '/teacher/topic',
+        children: [
+          {
+            name: '添加题目',
+            path: '/teacher/topic/add',
+          },
+          {
+            name: '编辑题目',
+            path: '/teacher/topic/edit',
+          }
+        ]
       },
       {
         name: '班级管理',

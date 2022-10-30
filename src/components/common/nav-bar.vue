@@ -1,9 +1,9 @@
 <template>
   <div class="nav-bar">
     <div class="content wrap-v1">
-      <template v-for="(item,index) in navBarData">
-        <div class="title" :class="{ active: currentIndex === index}" @click="itemClick(index)">
-          <router-link :to="item.path">{{item.name}}</router-link>
+      <template v-for="(item, index) in navBarData">
+        <div class="title" :class="{ active: currentIndex === index }" @click="itemClick(index)">
+          <router-link :to="item.path">{{ item.name }}</router-link>
         </div>
       </template>
     </div>
@@ -30,6 +30,7 @@ export default {
     $route(to, from) {
       const index = this.navBarData.findIndex(item => {
         if (!item.children) return item.path === to.path
+        if (item.path === to.path) return item.path === to.path
         for (const iten of item.children) {
           if (iten.path === to.path) {
             return iten.path === to.path
